@@ -6,7 +6,7 @@ import { useLayoutEffect } from "react";
 
 export default function FoodList() {
   const route = useRoute();
-  console.log(route.params);
+  //console.log(route.params);
   const navigation = useNavigation();
   const catMeal = MEALS.filter((item) => {
     return item.categoty.indexOf(route.params.id) >= 0;

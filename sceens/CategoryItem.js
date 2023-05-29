@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function CategoriesItem({ data }) {
   const navigation = useNavigation();
   const categoryHandler = () => {
-    console.log("details", data.id);
+    //console.log("details", data.id);
     navigation.navigate("FoodList", { id: data.id, title: data.title });
   };
   return (

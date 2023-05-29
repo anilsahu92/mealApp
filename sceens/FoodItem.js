@@ -1,7 +1,12 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { STYLES } from "../assets/css/commonStyles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function FoodItem({ data }) {
+  const navigation = useNavigation();
+  function showDetails() {
+    navigation.navigate("Food Info", data);
+  }
   return (
     <View style={styles.itemOuter}>
       <Pressable
@@ -10,6 +15,7 @@ export default function FoodItem({ data }) {
           pressed ? styles.pressed : null,
         ]}
         android_ripple={{ color: "#ccc" }}
+        onPress={showDetails}
       >
         <View style={STYLES.FLEX_1}>
           <Image style={styles.image} source={{ uri: data.img }} />
