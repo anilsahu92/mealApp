@@ -1,4 +1,11 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+} from "react-native";
 import { STYLES } from "../assets/css/commonStyles";
 import { useNavigation } from "@react-navigation/native";
 
@@ -25,9 +32,12 @@ export default function FoodItem({ data }) {
     </View>
   );
 }
+const windowWidth = Dimensions.get("window").width;
+//console.log(windowWidth);
 const styles = StyleSheet.create({
   itemOuter: {
-    flex: 1,
+    width: windowWidth / 2 - 22,
+    //flex: 1,
     margin: 10,
     height: 220,
     borderRadius: 8,

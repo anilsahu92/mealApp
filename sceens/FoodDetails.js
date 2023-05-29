@@ -21,10 +21,6 @@ export default function FoodDetails() {
       <Text style={[styles.title, styles.itemText]}>{item.title}</Text>
 
       <View style={styles.col}>
-        <Text style={[styles.itemText, styles.bold]}>Details : </Text>
-        <Text style={[styles.itemText, STYLES.FLEX_1]}>{item.desciption}</Text>
-      </View>
-      <View style={styles.col}>
         <Text style={[styles.itemText, styles.bold]}>Category : </Text>
         <View style={[STYLES.FLEX_1, styles.col]}>
           {item.categoty.map((item, index) => (
@@ -36,17 +32,21 @@ export default function FoodDetails() {
       </View>
       <View style={styles.col}>
         <Text style={[styles.itemText, styles.bold]}>Price : </Text>
-        <View style={[styles.itemText, STYLES.FLEX_1, styles.col]}>
+        <View style={[styles.itemText, STYLES.FLEX_1]}>
           {Object.entries(item.price).map(([key, val], index) => {
             return (
               <View key={index}>
                 <Text>
-                  {key} : {val} {", "}
+                  {key} : {val}
                 </Text>
               </View>
             );
           })}
         </View>
+      </View>
+      <View style={styles.col}>
+        <Text style={[styles.itemText, styles.bold]}>Details : </Text>
+        <Text style={[styles.itemText, STYLES.FLEX_1]}>{item.desciption}</Text>
       </View>
     </ScrollView>
   );
@@ -59,6 +59,10 @@ const styles = StyleSheet.create({
   col: {
     flex: 1,
     flexDirection: "row",
+    padding: 5,
+    backgroundColor: "#fff",
+    marginBottom: 10,
+    borderRadius: 5,
   },
   itemText: {
     color: "#000",
