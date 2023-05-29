@@ -80,8 +80,6 @@ const styles = StyleSheet.create({
   cats: {
     padding: 3,
     color: "#fff",
-    // borderColor: "blue",
-    // borderWidth: 1,
     backgroundColor: "#356abd",
     borderRadius: 5,
     marginRight: 5,
