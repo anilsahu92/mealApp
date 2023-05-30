@@ -1,19 +1,24 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { useLayoutEffect } from "react";
+//import { useLayoutEffect } from "react";
 import { STYLES } from "../assets/css/commonStyles";
 import { CATEGORIES } from "../data/defaultData";
+//import MenuToggle from "../navs/ManuToggle";
 
 export default function FoodDetails() {
   const route = useRoute();
   const item = route.params;
-  //console.log(route.params);
   const navigation = useNavigation();
   function catName(id) {
     const cat = CATEGORIES.find((item) => item.id === id);
-    //console.log(id, cat);
     return cat.title;
   }
+
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerLeft: () => <MenuToggle back={true} />,
+  //   });
+  // }, [navigation]);
 
   return (
     <ScrollView style={styles.container}>

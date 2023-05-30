@@ -8,6 +8,7 @@ export default function CategoriesItem({ data }) {
     //console.log("details", data.id);
     navigation.navigate("FoodList", { id: data.id, title: data.title });
   };
+
   return (
     <View style={[styles.itemOuter, { backgroundColor: data.color }]}>
       <Pressable
