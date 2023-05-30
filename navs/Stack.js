@@ -1,7 +1,7 @@
-import CategoriesList from "../sceens/CategoriesList";
 import FoodDetails from "../sceens/FoodDetails";
 import FoodList from "../sceens/FoodList";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import DrawerMenu from "./Draver";
 
 const Stack = createNativeStackNavigator();
 export default function StackMenu() {
@@ -17,8 +17,8 @@ export default function StackMenu() {
     >
       <Stack.Screen
         name="Categories"
-        component={CategoriesList}
-        options={{ title: "All Category" }}
+        component={DrawerMenu}
+        options={{ headerShown: false }}
       />
       <Stack.Screen name="FoodList" component={FoodList} />
       <Stack.Screen name="Food Info" component={FoodDetails} />

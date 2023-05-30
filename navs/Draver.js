@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Home from "../sceens/Home";
 import About from "../sceens/About";
-import StackMenu from "./Stack";
+import CategoriesList from "../sceens/CategoriesList";
 
 const Drawer = createDrawerNavigator();
 export default function DrawerMenu() {
@@ -15,16 +15,12 @@ export default function DrawerMenu() {
         //headerLeft: () => <MenuToggle back={false} />,
       }}
     >
-      <Drawer.Screen
-        name="Home"
-        component={Home}
-        //options={{ headerShown: false }}
-      />
+      <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="About" component={About} />
       <Drawer.Screen
         name="CategoriesDraver"
-        component={StackMenu}
-        options={{ headerShown: false, title: "Categories" }}
+        component={CategoriesList}
+        options={{ title: "Categories" }}
       />
     </Drawer.Navigator>
   );
